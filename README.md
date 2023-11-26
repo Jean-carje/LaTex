@@ -1,10 +1,10 @@
-# LaTex
 # LaTeX
 
 - LaTeX es un sistema de preparación de documentos. Escribe su documento en texto sin formato y, a lo largo del camino, incluye información sobre su estructura. El resultado es un archivo `.pdf` con un formato agradable. Esto tiene un par de ventajas principales en comparación con los procesadores de texto:
     - Es mucho más fácil escribir documentos estructurados, ya que te permite separar claramente el contenido y el formato (te preocupas principalmente por lo primero).
     - la consistencia y calidad tipográfica de sus documentos será excelente
     - Puedes componer cosas que son muy difíciles o imposibles de hacer con procesadores de texto normales.
+- Seguramente ya ha notado que `\`, `{` y `}` tienen un significado especial para LaTeX. El signo `\` comienza una instrucción de LaTeX: un «comando». Las llaves `{` y `}` se usan para mostrar *argumentos obligatorios*: información necesaria para los comandos.
 
 ## Archivos
 
@@ -117,3 +117,75 @@ Un artículo suele tener **secciones**. Démosle a nuestro documento una secci�
 `\section{Introduction}`
 
 `\end{document}`
+
+- Al usar el tipo de documento estándar `article`, LaTeX numerará las secciones y subsecciones y pondrá los títulos en negrita.
+- LaTeX puede estructurar el documento en bastantes niveles:
+    - `\chapter` (pero para poder utilizarlo debemos utilizar `\documentclass{book}` o `\documentclass{report}`)
+    - `\section`
+    - `\subsection`
+    - `\subsubsection`
+    - Podemos ir más lejos: el siguiente es `\paragraph`, pero casi siempre esto será ir demasiado «lejos» en una sección (sí, `\paragraph` es un comando de sección, ¡*no* una forma de comenzar un nuevo párrafo!).
+    
+    ```latex
+    \documentclass{article}
+    \usepackage[T1]{fontenc}
+    \begin{document}
+    ¡Hey mundo!
+    
+    Éste es un primer documento.
+    
+    \section{Título de la primera sección}
+    
+    Texto del contenido de la primera sección
+    
+    Segundo párrafo.
+    
+    \subsection{Subsección de la primera sección}
+    
+    Texto del contenido de la subsección.
+    
+    \section{Segunda sección}
+    
+    Texto de la segunda sección.
+    
+    \end{document}
+    ```
+    
+
+# comentarios
+
+- Podemos añadir comentarios en el archivo LaTeX comenzándolos con `%`
+
+# énfasis y cursiva
+
+```latex
+Texto con \emph{énfasis y contenido \emph{anidado}}.
+
+Texto en \textit{cursiva y contenido \textit{anidado}}
+```
+
+# Listas
+
+```latex
+\documentclass{article}
+\usepackage[T1]{fontenc}
+\begin{document}
+
+Numerada
+\begin{enumerate}
+  \item Una entrada
+  \item Otra
+  \item ¡Guau! Tres entradas
+\end{enumerate}
+
+No enumerada
+\begin{itemize}
+  \item Una entrada
+  \item Otra
+  \item ¡Guau! Tres entradas
+\end{itemize}
+
+\end{document}
+```
+
+1
